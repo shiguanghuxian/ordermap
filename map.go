@@ -110,8 +110,12 @@ func (om *OrderMap) Range(f func(key, value interface{}) bool) {
 
 // Len 获取map长度
 func (om *OrderMap) Len() int {
-	keys := om.Keys()
-	return len(keys)
+	count := 0
+	om.data.Range(func(key, value interface{}) bool {
+		count++
+		return true
+	})
+	return count
 }
 
 // Keys 获取所有key - 有序的
