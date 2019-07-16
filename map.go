@@ -11,7 +11,7 @@ import (
 
 /*
   有序map
-  注意: 只支持下标为 number string
+  注意: 如果需要调用json.Marshal方法将对象转为json字节，则只支持下标为 number string
 */
 
 // OrderMap 有序map
